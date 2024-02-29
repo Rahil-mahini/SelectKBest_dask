@@ -29,7 +29,7 @@ def get_num_descriptors (X_file_path):
         return num_des
 
     except Exception as e:
-        print("Error occurred while loading descriptors CSV data:", e)
+        print("Error occurred while loading features CSV data:", e)
     
     
 
@@ -67,7 +67,7 @@ def load_y_data(y_file_path):
         return  df_modified
 
     except Exception as e:
-        print("Error occurred while loading concentrations CSV data:", e)
+        print("Error occurred while loading label CSV data:", e)
         
 
    
