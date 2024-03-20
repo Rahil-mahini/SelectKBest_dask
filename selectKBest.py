@@ -86,17 +86,13 @@ def feature_selection(X_file_path, y_file_path, batch_size, num_selected_feature
         # Get the selected features return boolean
         selected_features = selector.get_support(indices=True)
 
+        selected_feature_names = X.columns[selected_features]
         
-       # Get the indices of the selected features
-        selected_feature_indices = [i for i, selected in enumerate(selected_features) if selected]
- 
-       # Get the names of the selected features
-        selected_feature_names = X.columns[selected_feature_indices]
-
-        
-       # Retrieve the selected features from the input with their column names
+        # Retrieve the selected features from the input with their column names
         selected_features = X[selected_feature_names]
-  
+        
+        # Select the columns corresponding to the selected features
+        selected_features = X[selected_feature_names]
         
         return selected_features   
    
