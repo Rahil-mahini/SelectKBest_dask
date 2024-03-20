@@ -7,7 +7,7 @@ from sklearn.feature_selection import  SelectKBest, f_regression
 from dask.distributed import Client , LocalCluster
 import dask
 
-#This code computes the feature selection for a very large dataset of features.
+#This code computes the feature selection for a very large dataset of features of 30 milions.
 #It execute the feature selection using SelectKBest from sklearn.feature_selection with the scoring function of f_regression for regression tasks  and  dask.delayed function on features (X) and endpoints (y) datasets.
 #First, load the features csv file (X) and endpoints csv file (y) into pandas dataframe.
 #Next, perform for loop to iterate through the features and divide them to batches. 
@@ -179,8 +179,8 @@ if __name__ == '__main__':
     y_file_path = r'/endpointcsv'       
     output_path = r'output'
        
-    batch_size = 1000
-    num_feature_to_select =  100
+    batch_size = 10000
+    num_feature_to_select =  150
     
     X_selected = feature_selection (X_file_path, y_file_path, batch_size, num_feature_to_select )
    
